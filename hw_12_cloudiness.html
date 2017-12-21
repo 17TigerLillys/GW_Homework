@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Bootstrap Visualization Dashboard</title>
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="homework_12.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body id="grey_background"> 
+  <nav id="navbar" class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        
+        <h2 id="lat"> <a color="white" id="white_button" role="button" href="homework_12.html">Latitude</a></h2>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="hw_12_data.htm">Data</a></li> 
+              <li role="separator" class="divider"></li>
+              <li><a href="hw_12_temperature.html">vs. Max Temperature </a></li>
+              <li><a href="hw_12_cloudiness.html"> vs. Cloudiness </a></li>
+             
+              <li><a href="hw_12_humidity.html"> vs. Humidity </a></li>
+              
+              <li><a href="hw_12_wind_speed.html"> vs. Wind Speed </a></li>
+            </ul>
+          </li>
+           <li class="active"><a id="better_button" href="hw_12_comparison.html" role="button">Comparison</a></li>
+          <li class="active"><a id="better_button" href="hw_12_data.htm" role="button">Data<span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div>
+    </div>
+      </nav>
+
+  <!-- Creates the Overall Grid -->
+  <div class="container-fluid">
+
+    <!-- First Row: Header Latitude and buttons -->
+    <!-- Second Row: Summary, Text and pictures -->
+    <div class="row">
+      <!--First Column in this Row-->
+      <div class="col-md-7">
+
+    
+        <div class="box">
+          <h1 id="small_title"> Cloudiness </h1>
+          <hr/>
+          <img src="output_13_0.png" alt="Random Graph" id="image_1" align="center">
+          <p class="black-para"> Looking at this graph, cities farther away from the equater clearly have a higher amount of clouds.
+           </p>
+        </div>
+
+      </div>
+
+      <!--Second Column in this Row-->
+      <div class="col-md-5">
+        <div class="box">
+          <h1 id="small_title"> Visualizations </h1>
+          <hr/>
+          <img src="output_11_0.png" alt="Random Graph" width="170", height="150">
+          <img src="output_13_0.png" alt="Random Graph" width="170", height="150">
+          <img src="output_15_0.png" alt="Random Graph" width="170", height="150">
+          <img src="output_9_0.png" alt="Random Graph" width="170", height="150">
+          <p> YOLO!!!!!!!!!!!  </p>
+        </div>
+      </div>
+    </div>
+
+    <!--Third Row: Bar at the bottom w/ copyright -->
+
+
+    <div class=“row”>
+      <hr id="PurpleLine">
+    
+
+   <div class=“row”>
+
+     <div class="col-md-12" "col-lg-12">
+
+       <h6>Copyright Julie Richardson 2017</h6>
+      </div>
+
+   </div>
+    </div>
+
+ 
+
+  </div>
+
+</body>
+
+</html>

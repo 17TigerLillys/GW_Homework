@@ -1,0 +1,117 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.container {
+  background: lightgrey;
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+.box {
+  height: 400px;
+  padding: 20px;
+  color: #fff;
+  margin: 30px;
+  background: white;
+}
+
+#navbar (max-width: 480px) {
+  color: pink;
+}
+
+.p {
+  color: black;
+}
+
+.black-para {
+  color: black;
+}
+
+#lat {
+  background: purple;
+  color: white;
+  padding: 5px;
+}
+
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+.h2 {
+	padding: 20px;
+	margin-top: 0px;
+	margin-bottom: 50px;
+}
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#hr {
+  background: teal;
+  padding: 0px;
+  height: 10px;
+  margin: 0px;
+  border: 0px;
+}
+
+
+#small_title {
+  color: teal;
+  font-family: times;
+  font-weight: bold;
+  font-size: 3.0vw;
+}
+
+#data-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#PurpleLine {
+  background: purple;
+  padding: 0px;
+  height: 10px;
+  margin: 0px;
+  border: 0px;
+
+}
+
+#white_button {
+  color: white;
+}
+
+#better_button{
+  background-color: #f8f8f8;
+}
+
+h6 {
+	background: grey;
+	padding: 20px;
+	color: white;
+  text-align: center;
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
