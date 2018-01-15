@@ -1,0 +1,11 @@
+.form-control {
+  display: inline-block;
+  width: 150px;
+  margin-top: 50px;
+}
+
+#picture {
+	white-space: nowrap;
+	display: inline;
+	float: left;
+}
