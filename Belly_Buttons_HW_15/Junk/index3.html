@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button BioDiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--link rel="stylesheet" href="style.css"-->
+  <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">  -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+</head>
+<body>
+  <div class="jumbotron text-center">
+      <h1>Belly Button Biodiversity Dashboard</h1>
+
+    </div>
+    <div id="pie-chart"></div>
+    <div id="bubble-chart"></div>
+    <script>
+        function build_pie_plot(data) {
+        //function build_pie_plot() {
+            var pie_chart_layout = {
+                title: "Top Ten Samples from BB_940",
+                height: 600,
+                width: 800
+                };
+            var fake_data = [{
+                  values: [163, 126, 113],
+                  labels: ["1166", "2858", "481"],
+                  type: "pie"
+                }];
+            Plotly.plot("pie-chart", fake_data, pie_chart_layout);
+          }
+          
+        // function updatePlotly(newdata) {
+        //   var PIE = document.getElementById("pie-chart");
+        //   Plotly.restyle(PIE, "values", [newdata]);
+        //   }
+              
+            //var COLORMAG = document.getElementById("bubble-chart");
+            //Plotly.plot(COLORMAG, data, color_magnitude_layout)
+        
+        //function build_dropdown_button(data) {
+
+        //}
+        function build_bubble_plot(data) { 
+        }
+        function getData() {
+            Plotly.d3.json("/names", function(error, data){
+                if (error) return console.warn(error);
+                console.log(data);
+                build_pie_plot(data);
+            });
+            // Plotly.d3.json("/otu", function(error, data){
+            //     if (error) return console.warn(error);
+            //     build_pie_plot(data);
+            // })
+            // Plotly.d3.json("/metadata/940", function(error, data){
+            //     if (error) return console.warn(error);
+            //     build_bubble_plot(data);
+            // })
+        //}
+        getData();
+        build_pie_plot();
+    </script>
+</body>
+</html>

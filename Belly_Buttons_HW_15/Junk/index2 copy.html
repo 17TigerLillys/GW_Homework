@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button BioDiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--link rel="stylesheet" href="style.css"-->
+  <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">  -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+</head>
+<body>
+  <div class="jumbotron text-center">
+      <h1>Belly Button Biodiversity Dashboard</h1>
+
+    </div>
+    <div id="pie-chart"></div>
+    <div id="bubble-chart"></div>
+    <script>
+  //       function build_pie_plot(data) {
+  //       //function build_pie_plot() {
+  //        //var sample = data["sample_values"].slice(0,10);
+  //    //var url='http://localhost:5000/otu';
+
+    // // d3.json(url, function(error, data) {
+    // //   if (error) return console.warn(error);
+    // //   var layout = {barmode: 'group'};
+      
+    // //  Plotly.newPlot('tester', data.data, layout);
+    // // });
+    //  //get the detailed sample data, and merge it with the related OTU data; then build the pie and bubble charts
+    //  // var new_sample_number=940
+  //  //          Plotly.d3.json("/samples/"+new_sample_number, function(error, data_sample){
+  //  //              if (error) return console.warn(error);
+  //  //              console.log("samples "+new_sample_number);
+  //  //              console.log(data_sample);
+  //  //              console.log("printing sample data " + data_sample[0].otu_id[0]);
+
+  //  //              build_pie_chart(data_sample, new_sample_number);
+  //  //              build_bubble_chart(data_sample, new_sample_number);
+
+  //  //          });
+
+  //           var pie_chart_layout = {
+  //               title: "Top Ten Samples from BB_940",
+  //               height: 600,
+  //               width: 800
+  //               };
+  //           var fake_data = [{
+  //                 values: [163, 126, 113],
+  //                 labels: ["1166", "2858", "481"],
+  //                 type: "pie"
+  //               }];
+  //           Plotly.plot("pie-chart", fake_data, pie_chart_layout);
+  //         }
+  //       console.log(Plotly.d3.json("/otu"))
+  //       build_pie_plot();
+
+  //       function getDescInit(sid, data_samp){
+  //           Plotly.d3.json("/otu", function(err,data){
+  //               pieInit(sid, data_samp, data);
+  //               bubbleInit(sid, data_samp, data);
+  //           });
+  //       };
+  //       function pieInit(sid, data, otu_list){
+  //           var samp = data["sample_values"].slice(0,10);
+  //           var oid = data["otu_ids"].slice(0,10);
+  //           console.log(oid)
+  //           var otu_desc = [];
+  //           var otu_keys = Object.keys(otu_list);
+  //           for (p=0; p < oid.length; p++){
+  //               for(q=0; q < otu_keys.length; q++){
+  //                   if (otu_keys[q].toString() === oid[p].toString()){
+  //                       otu_desc.push(otu_list[q.toString()])
+  //                   }
+  //               }
+  //           };
+
+            //get the detailed sample data, and merge it with the related OTU data; then build the pie and bubble charts
+            var new_sample_number="940"
+            //Plotly.d3.json("/names")
+            Plotly.d3.json("/samples/"+new_sample_number, function(error, data_sample){
+                //if (error) return console.warn(error);
+                console.log("samples "+new_sample_number);
+                console.log(data_sample);
+                console.log("printing sample data " + data_sample[0].otu_id[0]);
+
+                build_pie_chart(data_sample, new_sample_number);
+                build_bubble_chart(data_sample, new_sample_number);
+
+            })
+            //get the OTU descriptions
+            Plotly.d3.json("/otu", function(error, data_otu){
+                if (error) return console.warn(error);
+                console.log("getData-OTU");
+                console.log(data_otu);
+            });
+    </script>
+</body>
+</html>
