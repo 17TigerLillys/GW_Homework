@@ -138,6 +138,7 @@
               function updatePlotly(new_top_ten_values, new_top_ten_otu_id, new_top_ten_otu_desc, new_data_sample, new_sample_number) {
                   //update the PIE chart
                   var PIE = document.getElementById("pie_chart");
+                  console.log(PIE)
                   Plotly.relayout(PIE, "title", "Top Ten BB_"+ new_sample_number +" Samples");
                   Plotly.restyle(PIE, "values", [new_top_ten_values]);
                   Plotly.restyle(PIE, "labels", [new_top_ten_otu_id]);

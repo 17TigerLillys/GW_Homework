@@ -1,4 +1,3 @@
-// Get references to the tbody element, input field and button
 var $tbody = document.querySelector("tbody");
 var $stateInput = document.querySelector("#state");
 var $searchBtn = document.querySelector("#search");
@@ -7,12 +6,13 @@ var $cityInput = document.querySelector("#city");
 var $dateInput = document.querySelector("#date");
 var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
-//var $durationInput = document.querySelector("#duration");
 
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
 // Set filteredalienes to alienData initially
+//dataSetSmall=dataSet[0,10]
+//console.log(dataSetSmall)
 var filteredAliens = dataSet;
 //console.log(filteredAliens)
 // renderTable renders the filteredalienes to the tbody
@@ -35,36 +35,43 @@ function renderTable() {
 }
 function handleSearchButtonClick() {
   // Format the user's search by removing leading and trailing whitespace, lowercase the string
-  // Set filteredalienes to an array of all alienes whose "state" matches the filter
-  var filterShape = $shapeInput.value.trim().toLowerCase();
   var filterState = $stateInput.value.trim().toLowerCase();
-  var filterCity = $cityInput.value.trim().toLowerCase();
-  var filterDate = $dateInput.value.trim().toLowerCase();
-
-  if (filterState !=="") {
+  // Set filteredAddresses to an array of all addresses whose "state" matches the filter
+  if (filterState !== "") {
   filteredAliens = dataSet.filter(function(alien) {
     var alienState = alien.state.toLowerCase();
-    var filterState = $stateInput.value.trim().toLowerCase();
+    // If true, add the address to the filteredAddresses, otherwise don't add it to filteredAddresses
     return alienState === filterState;
   }); }
-    if (filterCity !=="") {
-    filteredAliens = filteredAliens.filter(function(alien) {
-    var filterCity = $cityInput.value.trim().toLowerCase();
+   
+  var filterShape = $shapeInput.value.trim().toLowerCase();
+  if (filterShape !== "") {
+  filteredAliens = dataSet.filter(function(alien) {
+    var alienShape = alien.shape.toLowerCase();
+    return alienShape === filterShape;
+  }); }
+
+  var filterCity = $cityInput.value.trim().toLowerCase();
+  if (filterCity !== "") {
+  filteredAliens = dataSet.filter(function(alien) {
     var alienCity = alien.city.toLowerCase();
     return alienCity === filterCity;
-  }) };
-    if (filterShape !=="") {
-    filteredAliens = filteredAliens.filter(function(alien) {
-      var filterShape = $shapeInput.value.trim().toLowerCase();
-      var alienShape = alien.shape.toLowerCase();
-      return alienShape === filterShape;
-      
-  })  }; 
-    if (isNaN(filterDate)) {
-    filteredAliens = filteredAliens.filter(function(alien) {
-      var filterDate = Date.parse($dateInput.value);
-      var alienDate = Date.parse(alien.datetime);
-      return alienDate === filterDate;
+  }); }
+
+  var filterCountry = $countryInput.value.trim().toLowerCase();
+  if (filterCountry !== "") {
+  filteredAliens = dataSet.filter(function(alien) {
+    var alienCountry = alien.country.toLowerCase();
+    return alienCountry === filterCountry;
+  }); }
+
+  var filterDate = Date.parse($dateInput.value);
+  if (filterDate !== "") {
+  filteredAliens = dataSet.filter(function(alien) {
+    var alienDate = Date.parse(alien.datetime);
+    //console.log(alienDate);
+    //console.log(filterDate);
+    return alienDate === filterDate;
   }); }
 
 
@@ -72,6 +79,3 @@ function handleSearchButtonClick() {
 }
 // Render the table for the first time on page load
 renderTable();
-
-
-

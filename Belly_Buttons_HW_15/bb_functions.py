@@ -29,7 +29,6 @@ def get_sample_metadata():
     new_file_df = sub_file_df.fillna(value=values, inplace=True)
     new_file_df.set_index("SAMPLEID", inplace=True)
     meta_data = new_file_df.to_dict(orient='index')
-    print(meta_data)
     return meta_data
 
 def get_sample_values(sample):
